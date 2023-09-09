@@ -34,15 +34,29 @@ public class Main {
             } else if (constants.containsKey(command)) {
                 String constValue = constants.get(command);
                 System.out.println("Value of " + command + " is " + constValue);
-            } else if (Objects.equals(command, "add")) {
+            }else if (Objects.equals(command, "sub")) {
                 System.out.print("Const(1):");
                 String const1 = scanner.next();
                 System.out.print("Const(2):");
                 String const2 = scanner.next();
 
-
                 if (constants.containsKey(const1) && constants.containsKey(const2)) {
-                    int result = Integer.parseInt(constants.get(const1)) + Integer.parseInt(constants.get(const2));
+                    int result = Integer.parseInt(constants.get(const1)) - Integer.parseInt(constants.get(const2));
+                    System.out.println("Result: " + result);
+                    System.out.print("Const Result Name:");
+
+                    String constName = scanner.next();
+
+                    constants.put(constName, String.valueOf(result));
+                }} else if (Objects.equals(command, "add")) {
+                System.out.print("Const(1):");
+                String const7 = scanner.next();
+                System.out.print("Const(2):");
+                String const8 = scanner.next();
+
+
+                if (constants.containsKey(const7) && constants.containsKey(const8)) {
+                    int result = Integer.parseInt(constants.get(const7)) + Integer.parseInt(constants.get(const8));
                     System.out.println("Result: " + result);
                     System.out.print("Const Result Name:");
 
@@ -52,8 +66,43 @@ public class Main {
                 } else {
                     System.out.println("Invalid constants.");
                 }
-            } else {
+            }else if (Objects.equals(command, "div")) {
+                System.out.print("Const(1):");
+                String const3 = scanner.next();
+                System.out.print("Const(2):");
+                String const4 = scanner.next();
+
+                if (constants.containsKey(const3) && constants.containsKey(const4)) {
+                    int result = Integer.parseInt(constants.get(const3)) / Integer.parseInt(constants.get(const4));
+                    System.out.println("Result: " + result);
+                    System.out.print("Const Result Name:");
+
+                    String constName = scanner.next();
+
+                    constants.put(constName, String.valueOf(result));
+                }}
+
+            else if (Objects.equals(command, "multi")) {
+                System.out.print("Const(1):");
+                String const5 = scanner.next();
+                System.out.print("Const(2):");
+                String const6 = scanner.next();
+
+                if (constants.containsKey(const5) && constants.containsKey(const6)) {
+                    int result = Integer.parseInt(constants.get(const5)) * Integer.parseInt(constants.get(const6));
+                    System.out.println("Result: " + result);
+                    System.out.print("Const Result Name:");
+
+                    String constName = scanner.next();
+
+                    constants.put(constName, String.valueOf(result));
+                }
+
+            }else {
                 System.out.println("Unknown command.");
+                System.out.println("Closing the Program...");
+                break;
+
             }
         }
     }
