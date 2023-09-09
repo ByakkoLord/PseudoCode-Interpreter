@@ -1,7 +1,4 @@
-import java.util.Objects;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -98,7 +95,26 @@ public class Main {
                     constants.put(constName, String.valueOf(result));
                 }
 
-            }else {
+            } else if (Objects.equals(command, "if")) {
+                System.out.println("What kind of validation you want:");
+                System.out.println("True (T)");
+                System.out.println("False (F)");
+                System.out.println("Equality (E)");
+                System.out.println("Different (D)");
+                System.out.println("Bigger than (B)");
+                System.out.println("Lower than (L)");
+                String ifChoice = scanner.next();
+
+                String ifChoiceLower = ifChoice.toLowerCase();
+
+
+                switch (ifChoiceLower){
+                    case "T":
+
+
+                }
+
+            } else {
                 System.out.println("Unknown command.");
                 System.out.println("Closing the Program...");
                 break;
