@@ -96,6 +96,14 @@ public class Main {
                 }
 
             } else if (Objects.equals(command, "if")) {
+                System.out.println("What constants you are use?:");
+                System.out.print("const(1)");
+                String const1 = scanner.next();
+
+                System.out.print("const(2)");
+                String const2 = scanner.next();
+
+
                 System.out.println("What kind of validation you want:");
                 System.out.println("True (T)");
                 System.out.println("False (F)");
@@ -109,7 +117,10 @@ public class Main {
 
 
                 switch (ifChoiceLower){
-                    case "T":
+                    case "e":
+                        if(constants.containsKey(const1) == constants.containsKey(const2)){
+                            System.out.println("The constant are equal!");
+                        }
 
 
                 }
