@@ -40,9 +40,15 @@ public class Main {
                 System.out.print("Const(2):");
                 String const2 = scanner.next();
 
+
                 if (constants.containsKey(const1) && constants.containsKey(const2)) {
                     int result = Integer.parseInt(constants.get(const1)) + Integer.parseInt(constants.get(const2));
                     System.out.println("Result: " + result);
+                    System.out.print("Const Result Name:");
+
+                    String constName = scanner.next();
+
+                    constants.put(constName, String.valueOf(result));
                 } else {
                     System.out.println("Invalid constants.");
                 }
